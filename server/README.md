@@ -51,6 +51,7 @@ This will give you options to:
 * install MongoDB 4.0
 	* move datadir /home/mongo
 * create symlinks to often used data & configs to your homedir
+* set up rsync backup
 
 Keep in mind, default gives you _my favourite_ settings incl. my brand logo on http(s) server badge.   
 

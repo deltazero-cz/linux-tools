@@ -3,7 +3,7 @@
 # Copyright (c) 2019 David Obdržálek, ΔO [deltazero.cz]
 # License: MIT
 
-PACKAGES="screen vim netcat ntp rsync fail2ban bash-completion git zip lsb-release software-properties-common"
+PACKAGES="screen vim netcat ntp rsync hdparm partprobe fail2ban bash-completion git zip lsb-release software-properties-common"
 
 echo
 echo -n "Update hostname? [$HOSTNAME]: "
@@ -20,7 +20,7 @@ echo
 echo "## Updating system..."
 
 echo
-if grep -q "Europe/UTC" /etc/timezone; then
+if grep -q "Etc/UTC" /etc/timezone; then
   sudo dpkg-reconfigure tzdata
 fi
 # sudo locale-gen en_US en_US.UTF-8 # cs_CZ cs_CZ.UTF-8

@@ -76,3 +76,4 @@ echo "*    INSTALLATION COMPLETE    *"
 echo "* * * * * * * * * * * * * * * *"
 echo
 echo "Reconnect now to enjoy fully :)"
+echo "Dont forget to backup"

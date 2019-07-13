@@ -8,7 +8,7 @@ TEMPLATE="https://tools.deltazero.cz/server/template_apache2.zip";
 echo
 echo "## Installing apache2..."
 
-sudo apt -yqq install apache2 certbot python3-certbot-apache > /dev/null
+sudo apt -yqq install apache2 certbot python3-certbot-apache
 sudo service apache2 stop
 
 sudo chown -R $USER:$USER /etc/apache2

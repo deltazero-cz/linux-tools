@@ -3,7 +3,6 @@
 # Copyright (c) 2019 David Obdržálek, ΔO [deltazero.cz]
 # License: MIT
 
-SERVER="athena.dayvee.cz"
 FILE="/root/.ssh/id_rsa"
 BUSER="backup_${HOSTNAME%%.*}"
 CMD="/usr/sbin/backup"
@@ -15,6 +14,14 @@ PARAMS="-avh --exclude '*/__*'"
 CRON="/var/spool/cron/crontabs/root"
 CRONOPTS="45 5  * * *   "
 
+echo -n "Your backup server [hostname]: "
+read SERVER
+
+if [[ -z $SERVER ]]; then
+	echo "No backup server; skipping"
+	exit
+fi
+
 if sudo test -f $FILE; then
 	echo "SSH key pair alreasy exists"
 else
@@ -25,7 +32,7 @@ else
 fi
 
 echo
-echo "On backup server [$SERVER], # useradd ${BUSER} -g backup -s /bin/false"
+echo "On backup server [$SERVER], # useradd ${BUSER} -g backup -s /bin/sh"
 echo "with .ssh/authorized_keys having:"
 echo
 sudo cat $FILE.pub
@@ -43,6 +50,6 @@ if sudo grep -q "/usr/sbin/backup" $CRON; then
 	echo "Cron backup already set, see # sudo crontab -l"
 else
 	sudo tee -a $CRON > /dev/null << EOF
-$CRONOPTS   /usr/sbin/backup
+$CRONOPTS /usr/sbin/backup
 EOF
 fi

@@ -24,8 +24,7 @@ fi
 
 sudo apt install -yqq $PHP-fpm $PHP-cli $PHP-bcmath $PHP-curl $PHP-imap $PHP-intl $PHP-json \
 	$PHP-mbstring $PHP-soap	$PHP-readline $PHP-xml $PHP-xmlrpc $PHP-xsl $PHP-zip \
-  $PHP-mysql $PHP-sqlite3 $PHP-mongodb \
-	> /dev/null
+  $PHP-mysql $PHP-sqlite3 $PHP-mongodb
 sudo apt -yqq dist-upgrade
 sudo apt -yqq autoremove
 
