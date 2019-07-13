@@ -7,5 +7,5 @@ Meant for freshly installed Debian and Ubuntu servers, virtual machines in most 
 
 ------
 
-**David Obdržálek**  
-ΔO [www.deltazero.cz]
+**David Obdržálek, ΔO**  
+www.deltazero.cz

@@ -30,7 +30,7 @@ cat > /etc/apache2/conf-available/home.conf << EOF
 </Directory>
 EOF
 
-sudo a2enmod -q ssl rewrite
+sudo a2enmod -q ssl rewrite http2
 sudo a2enconf -q home
 
 [[ ! -x /home/www ]] && sudo mkdir /home/www

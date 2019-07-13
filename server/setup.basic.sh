@@ -3,6 +3,8 @@
 # Copyright (c) 2019 David Obdržálek, ΔO [deltazero.cz]
 # License: MIT
 
+PACKAGES="screen vim netcat ntp rsync fail2ban bash-completion git zip lsb-release software-properties-common"
+
 echo
 echo -n "Update hostname? [$HOSTNAME]: "
 read newhost
@@ -25,8 +27,7 @@ fi
 
 sudo apt -qq update
 sudo apt -yqq dist-upgrade
-sudo apt -yqq install screen vim netcat ntp rsync fail2ban bash-completion git zip \
-  lsb-release software-properties-common
+sudo apt -yqq install $PACKAGES
 sudo apt -yqq autoremove
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100
 
