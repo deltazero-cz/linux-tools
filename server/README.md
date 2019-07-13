@@ -20,14 +20,16 @@ Tested on:
    
 -----------
 
-Use at your own risk.
+**Use at your own risk.**
 
 -----------
 
 ### Default usage
 
-Simply run this on your server  
-`bash <curl -s "https://tools.deltazero.cz/server/init.sh")`
+Simply run this on your server
+```bash  
+bash <curl -s "https://tools.deltazero.cz/server/init.sh")
+```
 
 This will give you options to:
 * update default username (if currenty: ubuntu, debian, user)
@@ -55,11 +57,13 @@ Keep in mind, default gives you _my favourite_ settings incl. my brand logo on h
 ### Customization
 
 Clone & modify the scripts, there are some config options in scripts' first lines.  
-
 Then run `bash init.sh`
 
 -----------
 
 
-**David Obdržálek, ΔO**  
+**David Obdržálek**
+
+<a href="https://www.deltazero.cz"><img src="https://www.deltazero.cz/d0.svg" width="130" alt="ΔO"></a>  
+
 www.deltazero.cz
