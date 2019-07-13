@@ -28,7 +28,7 @@ Tested on:
 
 Simply run this on your server
 ```bash  
-bash <curl -s "https://tools.deltazero.cz/server/init.sh")
+bash <(curl -s "https://tools.deltazero.cz/server/init.sh")
 ```
 
 This will give you options to:
@@ -64,6 +64,5 @@ Then run `bash init.sh`
 
 **David Obdržálek**
 
-<a href="https://www.deltazero.cz"><img src="https://www.deltazero.cz/d0.svg" width="130" alt="ΔO"></a>  
-
+<a href="https://www.deltazero.cz"><img src="https://www.deltazero.cz/d0.svg" width="130" alt="ΔO"></a>    
 www.deltazero.cz

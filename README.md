@@ -11,5 +11,4 @@ Meant for freshly installed Debian and Ubuntu servers, virtual machines in most 
 **David Obdržálek**
 
 <a href="https://www.deltazero.cz"><img src="https://www.deltazero.cz/d0.svg" width="130" alt="ΔO"></a>  
-
 www.deltazero.cz
