@@ -5,6 +5,7 @@
 #
 # WARNING: Hot renaming is dangerous, especially via remote access
 # -> you might lose access
+# PROCEED AT YOUR OWN RISK
 
 echo -n "Rename user? [$USER]: "
 read newuser

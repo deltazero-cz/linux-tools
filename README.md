@@ -8,4 +8,4 @@ Meant for freshly installed Debian and Ubuntu servers, virtual machines in most 
 ------
 
 **David Obdržálek**  
-ΔO [deltazero.cz]
+ΔO [www.deltazero.cz]
