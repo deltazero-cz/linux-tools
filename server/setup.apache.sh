@@ -85,13 +85,15 @@ ServerName		$HOSTNAME
 EOF
 
 			sudo service apache2 reload
-			CRON="/var/spool/cron/crontabs/root"
-			if [[ -f $CRON ]] && sudo grep -q "/usr/bin/certbot" $CRON; then
-				echo "Cron renewal already set, see # sudo crontab -l"
+			CRONOPTS="20 20 20 * *   "
+			CMD=`which certbot`
+
+			if sudo crontab -l | grep -q "$CMD"; then
+				echo "Cron certbot renewal already set, see # sudo crontab -l"
 			else
-				sudo tee -a $CRON > /dev/null << EOF
-0 12 25 * *     /usr/bin/certbot --quiet renew
-EOF
+				(sudo crontab -l ; echo "$CRONOPTS $CMD") 2>&1 | sed "s/no crontab for root//" | sort | uniq | sudo crontab -
+				echo "Installed new cronjob for root"
+				sudo crontab -l
 			fi
 
 			echo "All set, see https://$HOSTNAME :)"

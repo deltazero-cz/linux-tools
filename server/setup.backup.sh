@@ -5,14 +5,14 @@
 
 FILE="/root/.ssh/id_rsa"
 BUSER="backup_${HOSTNAME%%.*}"
-CMD="/usr/sbin/backup"
+CMD="/usr/local/bin/backup"
 DIRS="/home /etc /var/log"
 PARAMS="-avh --exclude '*/__*'"
 ## consider -v
 ## consider --del
 ## consider --exclude
 CRON="/var/spool/cron/crontabs/root"
-CRONOPTS="45 5  * * *   "
+CRONOPTS="45 05 * * *    "
 
 echo -n "Your backup server [hostname]: "
 read SERVER
@@ -46,10 +46,10 @@ sudo rsync $PARAMS -e ssh $DIRS $BUSER@$SERVER:/
 EOF
 sudo chmod +x $CMD
 
-if sudo grep -q "/usr/sbin/backup" $CRON; then
+if sudo crontab -l | grep -q "$CMD"; then
 	echo "Cron backup already set, see # sudo crontab -l"
 else
-	sudo tee -a $CRON > /dev/null << EOF
-$CRONOPTS /usr/sbin/backup
-EOF
+	(sudo crontab -l ; echo "$CRONOPTS $CMD") 2>&1 | sed "s/no crontab for root//" | sort | uniq | sudo crontab -
+	echo "Installed new cronjob for root"
+	sudo crontab -l
 fi
