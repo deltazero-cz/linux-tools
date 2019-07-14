@@ -37,8 +37,6 @@ echo "with .ssh/authorized_keys having:"
 echo
 sudo cat $FILE.pub
 echo
-echo "then just # sudo backup"
-echo "do first backup now to auth known host"
 
 sudo tee $CMD > /dev/null << EOF
 #!/bin/sh
@@ -53,3 +51,7 @@ else
 	echo "Installed new cronjob for root"
 	sudo crontab -l
 fi
+
+echo
+echo "do first backup now to auth known host"
+echo "# sudo backup"
