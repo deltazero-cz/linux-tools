@@ -32,7 +32,7 @@ else
 fi
 
 echo
-echo "On backup server [$SERVER], # useradd ${BUSER} -g backup -s /bin/sh"
+echo "On backup server [$SERVER], # sudo useradd ${BUSER} -g backup -s /bin/sh"
 echo "with .ssh/authorized_keys having:"
 echo
 sudo cat $FILE.pub
@@ -54,4 +54,4 @@ fi
 
 echo
 echo "do first backup now to auth known host"
-echo "# sudo backup"
+echo "# backup"
